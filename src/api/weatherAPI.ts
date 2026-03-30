@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { CurrentWeather, HistoricalWeather, MarineWeather, Coordinates } from '../types';
 
-const API_KEY = '4d23f15cfd79948f3c91e6eea107e740';
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY || '4d23f15cfd79948f3c91e6eea107e740';
 const WEATHER_BASE_URL = 'https://api.openweathermap.org/data/2.5';
 const GEO_BASE_URL = 'https://api.openweathermap.org/geo/1.0';
 
