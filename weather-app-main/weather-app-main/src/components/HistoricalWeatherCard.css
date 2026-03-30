@@ -1,0 +1,136 @@
+.historical-weather-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.historical-weather-card h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.historical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+.historical-item {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.historical-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+}
+
+.historical-date {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.historical-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.historical-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.historical-description {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  min-height: 2.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.historical-temps {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(102, 126, 234, 0.2);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.temp-max,
+.temp-min {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.temp-max .label,
+.temp-min .label,
+.historical-precipitation .label {
+  font-size: 0.7rem;
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.temp-max .value,
+.temp-min .value,
+.historical-precipitation .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.temp-max .value {
+  color: #ff6b6b;
+}
+
+.temp-min .value {
+  color: #4ecdc4;
+}
+
+.historical-precipitation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.historical-precipitation .value {
+  color: #667eea;
+}
+
+@media (max-width: 768px) {
+  .historical-weather-card {
+    padding: 1.5rem;
+  }
+
+  .historical-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    .historical-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
